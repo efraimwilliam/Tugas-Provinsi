@@ -1,0 +1,22 @@
+.formcss{
+    position: relative;
+    top:50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.formcss2{
+    position: relative;
+    top:0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.button{
+    position: relative;
+    margin-left: 500px;
+}

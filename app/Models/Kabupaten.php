@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Kabupaten extends Model
 {
     use HasFactory;
+
     public $fillable = ['nama', 'id_provinsi'];
 
     protected $table = 'kabupaten';
@@ -15,9 +16,8 @@ class Kabupaten extends Model
     public $incrementing = true;
     protected $timestamp = true;
 
-    //one to many inverse relationship
+    //one to many inverse provinsi
     public function provinsi(){
-        //return $this->belongsTo(User::class, 'id_user');
         return $this->belongsTo(Provinsi::class, 'id_provinsi');
-        }
+    }
 }

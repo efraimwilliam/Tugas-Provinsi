@@ -24,7 +24,7 @@
                             <select class="form-select form-select-lg mb-3 col-12" name=id_provinsi aria-label="Default select example">
                                 <option selected>Pilih Provinsi</option>
                                     @foreach($provinsi as $prov)
-                                <option value="{{$prov->id ==  'selected' : ''}}">{{$prov->nama}}</option>
+                                <option value="{{$prov->id}}">{{$prov->nama}}</option>
                                     @endforeach
                             </select>  
 

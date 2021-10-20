@@ -4,7 +4,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link href="{{ asset('css/formcss.css') }}" rel="stylesheet">
 
-
+<div class="button">
+    <a href="/createprovinsi" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create Provinsi</a>
+    <a href="/createkabupaten" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create Kabupaten</a>
+</div>
 
 <div class="formcss">
 <table class="table table-bordered">
@@ -17,14 +20,16 @@
     </tr>
   </thead>
   <tbody>
+   
+  @if(isset($provinsi))
     @foreach ($provinsi as $prov)
-
     <tr>
       <td class="text-center">{{$prov->id}}</td>
       <td class="text-center">{{$prov->nama}}</td>
-      <td class="text-center">{{$prov->kabupaten}}</td>
+       <!--Relation one to many-->
+      <td class="text-center"> @foreach ($prov->kabupaten as $test) {{$test->nama}} @endforeach</td>
+     
       <td>
-
       <a href="/viewprovinsi/{{$prov->id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lihat</a>
       <a href="/editprovinsi/{{$prov->id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>  
       
@@ -37,6 +42,7 @@
     </tr>
   </tbody>
     @endforeach
+  @endif
     
    
 </table>
@@ -75,7 +81,3 @@
 </table>
 </div>
 
-<div class="button">
-    <a href="/createprovinsi" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create Provinsi</a>
-    <a href="/createkabupaten" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Create Kabupaten</a>
-</div>

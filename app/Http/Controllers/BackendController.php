@@ -13,12 +13,12 @@ class BackendController extends Controller
     public function form(){
         $provinsi = Provinsi::all();
         $kabupaten = Kabupaten::all();
+        
+        $kf = Provinsi::get();
+        $dd = DB::table('provinsi')->select('nama')->get();
 
-        $ks = Provinsi::all();
-       
-
-        //dd($kabupaten);
-        return view('form', compact('provinsi', 'kabupaten', 'ks'));        
+        //dd($provinsi);
+        return view('form', compact('provinsi', 'kabupaten', 'kf', 'dd'));        
     }
 
     //page provinsi

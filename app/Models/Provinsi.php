@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Provinsi extends Model
 {
     use HasFactory;
+    
     public $fillable = ['nama'];
 
     protected $table = 'provinsi';
@@ -15,7 +16,7 @@ class Provinsi extends Model
     public $incrementing = true;
     protected $timestamp = true;
 
-    //one to many user
+    //one to many kabupaten
     public function kabupaten(){
         return $this->hasMany(Kabupaten::class, 'id_provinsi');
     }

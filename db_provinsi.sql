@@ -11,7 +11,7 @@
  Target Server Version : 80023
  File Encoding         : 65001
 
- Date: 18/10/2021 03:47:46
+ Date: 20/10/2021 23:04:55
 */
 
 SET NAMES utf8mb4;
@@ -50,16 +50,38 @@ CREATE TABLE `kabupaten` (
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_provinsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of kabupaten
 -- ----------------------------
 BEGIN;
-INSERT INTO `kabupaten` VALUES (1, '2021-10-17 15:48:38', '2021-10-17 19:13:59', 'Badung', '2');
-INSERT INTO `kabupaten` VALUES (2, '2021-10-17 16:20:57', '2021-10-17 16:20:57', 'Gianyar', '2');
-INSERT INTO `kabupaten` VALUES (3, '2021-10-17 16:48:06', '2021-10-17 16:48:06', 'Jakarta Timur', '1');
-INSERT INTO `kabupaten` VALUES (4, '2021-10-17 18:52:54', '2021-10-17 18:52:54', 'Jakarta barat', '1');
+INSERT INTO `kabupaten` VALUES (1, '2021-10-20 14:46:39', '2021-10-20 15:02:35', 'Jakarta Timur', '1');
+INSERT INTO `kabupaten` VALUES (2, '2021-10-20 14:46:51', '2021-10-20 14:46:51', 'Gianyar', '2');
+INSERT INTO `kabupaten` VALUES (3, '2021-10-20 14:46:59', '2021-10-20 14:46:59', 'Bandung', '3');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for kecamatan
+-- ----------------------------
+DROP TABLE IF EXISTS `kecamatan`;
+CREATE TABLE `kecamatan` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_provinsi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_kabupaten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of kecamatan
+-- ----------------------------
+BEGIN;
+INSERT INTO `kecamatan` VALUES (1, '2021-10-20 14:48:49', '2021-10-20 14:48:49', 'Duren Sawit', '1', '1');
+INSERT INTO `kecamatan` VALUES (2, '2021-10-20 14:49:54', '2021-10-20 14:49:54', 'Bakbakan', '2', '2');
+INSERT INTO `kecamatan` VALUES (3, '2021-10-20 14:50:45', '2021-10-20 14:50:45', 'Cimahi', '3', '3');
 COMMIT;
 
 -- ----------------------------
@@ -71,7 +93,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -83,6 +105,7 @@ INSERT INTO `migrations` VALUES (3, '2019_08_19_000000_create_failed_jobs_table'
 INSERT INTO `migrations` VALUES (4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
 INSERT INTO `migrations` VALUES (5, '2021_10_17_133542_create_provinsi_table', 1);
 INSERT INTO `migrations` VALUES (6, '2021_10_17_133630_create_kabupaten_table', 1);
+INSERT INTO `migrations` VALUES (7, '2021_10_20_121505_create_kecamatan_table', 2);
 COMMIT;
 
 -- ----------------------------
@@ -135,17 +158,17 @@ CREATE TABLE `provinsi` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of provinsi
 -- ----------------------------
 BEGIN;
-INSERT INTO `provinsi` VALUES (1, '2021-10-17 15:12:28', '2021-10-17 15:12:28', 'Jakarta');
-INSERT INTO `provinsi` VALUES (2, '2021-10-17 15:13:48', '2021-10-17 15:13:48', 'Bali');
-INSERT INTO `provinsi` VALUES (3, '2021-10-17 15:35:06', '2021-10-17 15:35:06', 'Jawa Barat');
+INSERT INTO `provinsi` VALUES (1, '2021-10-20 14:46:17', '2021-10-20 14:48:36', 'Jakarta');
+INSERT INTO `provinsi` VALUES (2, '2021-10-20 14:46:23', '2021-10-20 14:46:23', 'Bali');
+INSERT INTO `provinsi` VALUES (3, '2021-10-20 14:46:27', '2021-10-20 14:46:27', 'Jawa Barat');
 COMMIT;
 
 -- ----------------------------

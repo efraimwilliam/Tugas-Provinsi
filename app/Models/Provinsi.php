@@ -20,4 +20,9 @@ class Provinsi extends Model
     public function kabupaten(){
         return $this->hasMany(Kabupaten::class, 'id_provinsi');
     }
+
+    //one to many kecamatan
+    public function kecamatan(){
+        return $this->hasMany(Kecamatan::class, 'id_provinsi');
+    }
 }

@@ -23,8 +23,7 @@
 
 .button{
     position: relative;
-    margin-top: 100px;
     margin-left: 500px;
-    margin-bottom: -100px;
+    top: 50px
 }
 

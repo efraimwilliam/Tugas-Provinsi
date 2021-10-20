@@ -12,7 +12,9 @@
             <p class="text-center">Lihat Provinsi</p>
                 <div class="card">
                     <div class="card-body">
-                        
+
+                    
+                            <label for="validationCustom01" class="form-label">Provinsi</label>    
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama" value="{{$provinsi->nama}}" disabled>
                             </div>        

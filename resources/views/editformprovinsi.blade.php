@@ -15,6 +15,8 @@
                         <form action="/submiteditprovinsi/{{$provinsi->id}}" method="POST">
                         @csrf
                         @method('PUT') 
+
+                            <label for="validationCustom01" class="form-label">Provinsi</label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama" value="{{$provinsi->nama}}">
                             </div>        

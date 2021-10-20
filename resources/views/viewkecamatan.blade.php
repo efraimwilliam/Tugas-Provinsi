@@ -9,21 +9,27 @@
         
         <div class="row justify-content-center align-items-center" style="height:50px">
             <div class="col-4">
-            <p class="text-center">Lihat Kabupaten</p>
+            <p class="text-center">Lihat Kecamatan</p>
                 <div class="card">
                     <div class="card-body">
     
-                            <label for="validationCustom01" class="form-label">Kabupaten</label>
+                            <label for="validationCustom01" class="form-label">Kecamatan</label>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nama" value="{{$kabupaten->nama}}" disabled>
+                                <input type="text" class="form-control" name="nama" value="{{$kecamatan->nama}}" disabled>
                             </div>        
                             <br>
 
                             <label for="validationCustom01" class="form-label">Provinsi</label>
-                            <div class="form-group">   
-                                <input type="text" class="form-control" name="id_provinsi" value="{{$kabupaten->provinsi->nama}}" disabled>
-                            </div>                       
-                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="id_provinsi" value="{{$kecamatan->provinsikab->nama}}" disabled>
+                            </div>
+                            <br>
+
+                            <label for="validationCustom01" class="form-label">Kabupaten</label>
+                            <div class="form-group">
+                               <input type="text" class="form-control" name="kabupaten" value="{{$kecamatan->kabupatenkab->nama}}" disabled>
+                           </div> 
+                                
                             <br>
                             </select>      
                                 <a href="/">                  

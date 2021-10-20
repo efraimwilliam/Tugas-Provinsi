@@ -9,24 +9,35 @@
         
         <div class="row justify-content-center align-items-center" style="height:50px">
             <div class="col-4">
-            <p class="text-center">Edit Kabupaten</p>
+            <p class="text-center">Registrasi Kecamatan</p>
                 <div class="card">
                     <div class="card-body">
-                        <form action="/submiteditkabupaten/{{$kabupaten->id}}" method="POST">
+                        <form action="/submitformkecamatan" method="POST">
                         @csrf
-                        @method('PUT') 
-
-                            <label for="validationCustom01" class="form-label">Kabupaten</label>
+                        
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nama" value="{{$kabupaten->nama}}">
-                            </div>        
+                                <label for="validationDefault02" class="form-label">Nama</label>
+                                <input type="text" class="form-control" name="nama" placeholder="Nama Kabupaten" id="validationDefault02" required>
+                            </div>
+                               
                             <br>
-                            <select class="form-select form-select-lg mb-3 col-12"  name=id_provinsi aria-label="Default select example">
+
+                            <label for="validationDefault02" class="form-label">Provinsi</label>
+                            <select class="form-select form-select-lg mb-3 col-12" name=id_provinsi aria-label="Default select example" required>
                                 <option disabled="Pilih Provinsi" selected>Pilih Provinsi</option>
                                     @foreach($provinsi as $prov)
                                 <option value="{{$prov->id}}">{{$prov->nama}}</option>
                                     @endforeach
-                            </select>      
+                            </select>
+                            <br>
+                            <label for="validationDefault02" class="form-label">Kabupaten</label>
+                            <select class="form-select form-select-lg mb-3 col-12" name=id_kabupaten aria-label="Default select example" id="validationDefault02" required>
+                                <option disabled="Pilih Kabupaten" selected>Pilih Kabupaten</option>
+                                    @foreach($kabupaten as $kab)
+                                <option value="{{$kab->id}}">{{$kab->nama}}</option>
+                                    @endforeach
+                            </select>  
+
                                 <a href="/">                  
                                   <button type="button" class="btn btn-danger">Close</button> 
                                 </a>

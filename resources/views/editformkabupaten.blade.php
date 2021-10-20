@@ -22,7 +22,7 @@
                             </div>        
                             <br>
                             <select class="form-select form-select-lg mb-3 col-12"  name=id_provinsi aria-label="Default select example">
-                                <option disabled="Pilih Provinsi" selected>Pilih Provinsi</option>
+                                <option disabled="Pilih Provinsi" selected>{{$kabupaten->provinsi->nama}}</option>
                                     @foreach($provinsi as $prov)
                                 <option value="{{$prov->id}}">{{$prov->nama}}</option>
                                     @endforeach

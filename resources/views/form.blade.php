@@ -111,7 +111,7 @@
       <a href="/viewkecamatan/{{$kec->id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Lihat</a>
       <a href="/editkecamatan/{{$kec->id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>  
       
-        <form action="deletekecamantan/{{$kec->id}}" method="POST">
+        <form action="deletekecamatan/{{$kec->id}}" method="POST">
           @csrf
           @method('DELETE') 
             <button href='{{$kec->id}}' type='submit' class='btn-delete btn btn-danger btn-sm my-2 my-sm-2 p-2'>Delete</button>

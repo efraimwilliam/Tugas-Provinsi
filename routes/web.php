@@ -62,3 +62,5 @@ Route::get('/viewkecamatan/{id}', [BackendController::class, 'viewkecamatan']);
 Route::get('/editkecamatan/{id}', [BackendController::class, 'editviewkecamatan']);
 
 Route::put('/submiteditkecamatan/{id}', [BackendController::class, 'submiteditkecamatan']);
+
+Route::delete('/deletekecamatan/{id}', [BackendController::class, 'deletekecamatan']);

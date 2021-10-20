@@ -146,7 +146,6 @@ class BackendController extends Controller
         return view('viewkecamatan', compact('kecamatan'));
     }
 
-    /*
     //edit page kecamatan
     public function editviewkecamatan($id){
         $provinsi = Provinsi::all();
@@ -168,6 +167,13 @@ class BackendController extends Controller
 
         return redirect('/');
     }
-    */
+
+    //delete kabupaten
+    public function deletekecamatan($id){
+        $kecamatan = Kecamatan::where('id', $id)->first();
+        $kecamatan->delete();
+    
+        return redirect('/');
+    }
 
 }
